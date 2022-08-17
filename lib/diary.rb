@@ -1,14 +1,15 @@
 # File: lib/diary.rb
 class Diary
   def initialize
+    @diary = []
   end
 
   def add(entry) # entry is an instance of DiaryEntry
-    # Returns nothing
+    @diary << entry
   end
 
   def all
-    # Returns a list of instances of DiaryEntry
+    return @diary
   end
 
   def count_words
@@ -36,19 +37,21 @@ end
 # File: lib/diary_entry.rb
 class DiaryEntry
   def initialize(title, contents) # title, contents are strings
-    # ...
+    @title = title
+    @contents = contents
   end
 
   def title
-    # Returns the title as a string
+    @title
   end
 
   def contents
-    # Returns the contents as a string
+    @contents
   end
 
   def count_words
     # Returns the number of words in the contents as an integer
+    return @contents.split.length
   end
 
   def reading_time(wpm) # wpm is an integer representing
